@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changesets/create-schema.yaml
+  - include:
+      file: db/changelog/changesets/create-table-register.yaml
+  - include:
+      file: db/changelog/changesets/create-table-history.yaml
+  - include:
+      file: db/changelog/changesets/create-table-documents.yaml
+#  - include:
+#      file: db/changelog/changesets/alter-table-history-add-fk.yaml

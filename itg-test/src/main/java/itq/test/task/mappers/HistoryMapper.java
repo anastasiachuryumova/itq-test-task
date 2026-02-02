@@ -1,0 +1,21 @@
+package itq.test.task.mappers;
+
+import itq.test.task.dto.HistoryDto;
+import itq.test.task.entity.History;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+
+import java.util.Set;
+
+@Mapper
+public interface HistoryMapper {
+    @Mapping(target = "document", ignore = true)
+    History dtoToEntity(HistoryDto historyDto);
+
+    @Mapping(target = "document", ignore = true)
+    HistoryDto entityToDto(History history);
+
+    Set<History> dtosToEntities(Set<HistoryDto> historyDtos);
+
+    Set<HistoryDto> entitiesToDtos(Set<History> historyList);
+}

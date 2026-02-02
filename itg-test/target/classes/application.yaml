@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: itq-task
+  profiles:
+    default: dev
+  datasource:
+#    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/mydatabase
+    username: user
+    password: password
+
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+
+  liquibase:
+    default-schema: itq_task
+number: 8
+batchSize: 10

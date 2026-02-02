@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: A. Churyumova
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - tableExists:
+                tableName: register
+      changes:
+        - createTable:
+            tableName: register
+            schemaName: itq_task
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                  autoIncrement: true
+                  remarks: "Идентификатор записи в таблице регистрации"
+#              - column:
+#                  name: document_id
+#                  type: bigint
+#                  constraints:
+#                    nullable: false
+#                    foreignKeyName: fk_register_id
+#                    references: register(id)
+#                  remarks: "Идентификатор зарегистрированного документа"
+              - column:
+                  name: status
+                  type: varchar
+                  remarks: "Статус документа"
+
+      rollback:
+        - dropTable:
+            tableName: register
+      comment: 'Зарегистрированные документы'

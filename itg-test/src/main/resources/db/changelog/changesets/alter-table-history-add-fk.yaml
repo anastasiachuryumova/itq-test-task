@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 5
+      author: A. Churyumova
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: document_id
+            baseTableName: history
+            constraintName: fk_history_document
+            referencedColumnNames: document_id
+            referencedTableName: documents
